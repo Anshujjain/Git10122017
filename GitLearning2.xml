@@ -1,0 +1,43 @@
+An XML element that contains other elements and/or attributes.
+There are four kinds of complex elements:
+Empty elements  
+<Employee Empid="10631475" /> 
+
+Elements that contain only other elements
+<xs:element name="product">
+  <xs:complexType>
+    <xs:complexContent>
+      <xs:restriction base="xs:integer">
+        <xs:attribute name="prodid" type="xs:positiveInteger"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:element> 
+   -  elements that contain only text
+<xs:element name="shoesize">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute name="country" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element> 
+
+   -  Elements that contain both other elements and text
+<letter>
+  Dear Mr.<name>John Smith</name>.
+  Your order <orderid>1032</orderid>
+  will be shipped on <shipdate>2001-07-13</shipdate>.
+</letter>
+The following schema declares the "letter" element:
+
+<xs:element name="letter">
+  <xs:complexType mixed="true">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="orderid" type="xs:positiveInteger"/>
+      <xs:element name="shipdate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
