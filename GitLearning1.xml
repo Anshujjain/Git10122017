@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-   
-   <head>
-      <title>Hyperlink Example</title>
-   </head>
-	
-   <body>
-      <p>Click following link</p>
-      <a href = "http://www.tutorialspoint.com" target = "_self">Tutorials Point</a>
-      
 <table style="width:100%">
 <tr>
   <td><a href="#1">1</a></td>
